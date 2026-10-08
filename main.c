@@ -1,38 +1,30 @@
 #include <studio.h>
+#include <stdblish.h>
 
-int get_integer(void);
-int factorial(int n);
-int combination(int n, int r);
+int sumTwo(int a, int b) {
+    return a + b;
+}
 
-int main(void) {
-    int n, r, result;
+int square(int n) {
+    return n * n;
+}
 
-    printf("Enter n: ");
-    n = get_integer();
-    printf("Enter r: ");
-    r = get_integer();
+int get_max(int x, int y) {
+    if (x > y) {
+        return x;
+    } else {
+        retutn y;
+    }
+}
 
-    result = combination(n, r);
-    printf("C(%d, %d) = %d\n", n, r, result);
+int main (int argc, char *argv[]) {
+    int res1 = sumTwo(10, 20);
+    int res2 = square(5);
+    int res3 = get_max(15, 30);
+
+    printf("sumTwo(10, 20) = %d\n", res1);
+    printf("square(5) = %d\n", res2);
+    printf("get_max(15, 20) = %d\n", res3);
 
     return 0;
-}
-
-int get_integer(void) {
-    int input;
-    scanf("%d", &input);
-    return input;
-}
-
-int factorial(int n) {
-    int res = 1;
-    int i;
-    for(i = 1; i<= n; i++) {
-        res = res * i;
-    }
-    return res;
-}
-
-int combination(int n, int r) {
-    return factorial(n) / (factorial(n - r) * factorial(r));
 }
