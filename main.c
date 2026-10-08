@@ -1,21 +1,38 @@
 #include <studio.h>
 
-void square_void(int a){
-    a = a * a;
-}
-
-int square_int(int a) {
-    return (a * a);
-}
+int get_integer(void);
+int factorial(int n);
+int combination(int n, int r);
 
 int main(void) {
-    int a1 = 2;
-    square_void(a1);
-    printf("a = %d/n", a1);
+    int n, r, result;
 
-    int a2 = 2;
-    a2 = square_int(a2);
-    printf("a = %d/n", a2);
+    printf("Enter n: ");
+    n = get_integer();
+    printf("Enter r: ");
+    r = get_integer();
+
+    result = combination(n, r);
+    printf("C(%d, %d) = %d\n", n, r, result);
 
     return 0;
+}
+
+int get_integer(void) {
+    int input;
+    scanf("%d", &input);
+    return input;
+}
+
+int factorial(int n) {
+    int res = 1;
+    int i;
+    for(i = 1; i<= n; i++) {
+        res = res * i;
+    }
+    return res;
+}
+
+int combination(int n, int r) {
+    return factorial(n) / (factorial(n - r) * factorial(r));
 }
