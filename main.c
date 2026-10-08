@@ -1,30 +1,21 @@
 #include <studio.h>
-#include <stdblish.h>
 
-int sumTwo(int a, int b) {
-    return a + b;
+void square_void(int a){
+    a = a * a;
 }
 
-int square(int n) {
-    return n * n;
+int square_int(int a) {
+    return (a * a);
 }
 
-int get_max(int x, int y) {
-    if (x > y) {
-        return x;
-    } else {
-        retutn y;
-    }
-}
+int main(void) {
+    int a1 = 2;
+    square_void(a1);
+    printf("a = %d\n", a1);
 
-int main (int argc, char *argv[]) {
-    int res1 = sumTwo(10, 20);
-    int res2 = square(5);
-    int res3 = get_max(15, 30);
-
-    printf("sumTwo(10, 20) = %d\n", res1);
-    printf("square(5) = %d\n", res2);
-    printf("get_max(15, 20) = %d\n", res3);
+    int a2 = 2;
+    a2 = square_int(a2);
+    printf("a = %d\n", a2);
 
     return 0;
 }
